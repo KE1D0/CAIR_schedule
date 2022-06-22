@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CAIR_Schedule.MainPage">
+
+    <StackLayout VerticalOptions="CenterAndExpand" Margin="20">
+        <Button x:Name="logout" Text="Выйти"  Clicked="Button_Click"></Button>
+        <ListView x:Name="LessonsListView"
+            BackgroundColor="#F0F0FFFF"
+
+            RowHeight="200"
+            ItemTapped="LessonsListView_ItemTapped"
+            ItemSelected="LessonsListView_ItemSelected"
+            CachingStrategy="RecycleElement"
+            SeparatorVisibility="Default"
+            SeparatorColor="Black">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="5" Orientation="Vertical">
+                            <Label x:Name="lbTitle" Text="{Binding Group_name}" 
+                                   Style="{DynamicResource ListItemTextStyle}" />
+                            <Label x:Name="lbName" Text="{Binding Name}" 
+                                       Style="{DynamicResource ListItemDetailTextStyle}"/>
+                            <Label x:Name="lbCount" TextColor="Brown" Text="{Binding Comment}"
+                                       FontAttributes="Bold"
+                                       Style="{DynamicResource ListItemTextStyle}"/>
+                            <StackLayout Orientation="Horizontal" Spacing="8">
+
+                                <Label x:Name="lb" TextColor="#cc9347" Text="{Binding Date_time}"
+                                       FontAttributes="Bold"
+                                       Style="{DynamicResource ListItemTextStyle}"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

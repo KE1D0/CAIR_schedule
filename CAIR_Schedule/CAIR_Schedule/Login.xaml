@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CAIR_Schedule.Page1">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" Margin="20">
+            <Label Text="Введите логин и пароль для просмотра расписания" HorizontalTextAlignment="Center"/>
+            <Entry Completed="Button_Click" x:Name="login" Placeholder="Логин" HorizontalTextAlignment="Center"/>
+            <Entry Completed="Button_Click" x:Name="pass" Placeholder="Пароль" IsPassword="true" HorizontalTextAlignment="Center"/>
+            <Button x:Name="enter" Text="Войти"  Clicked="Button_Click"></Button>
+            <Label Text="Узнать данные для входа Вы можете у своего преподавателя или администрации" HorizontalTextAlignment="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
